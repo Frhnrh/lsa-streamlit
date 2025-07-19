@@ -9,7 +9,7 @@ import io
 # STREAMLIT INTERFACE WRAPPER
 # ===============================
 st.set_page_config(page_title="Least Squares Adjustment (LSA)", layout="wide")
-st.title("📐 Least Squares Adjustment (LSA) Tool")
+st.title("📐 Least Squares Adjustment (LSA) Elevation Analyzer")
 st.markdown("Upload CSV or enter data manually to perform LSA and plot results.")
 
 uploaded_file = st.file_uploader("📂 Upload CSV File", type=["csv"])
