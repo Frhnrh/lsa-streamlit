@@ -108,7 +108,7 @@ if st.button("Run LSA") and unknown_points and known_points and observations:
 
     # STEP 5: Display Results
     
-    st.subheader("📊 Step 5: Results")
+    st.subheader("📊 Results")
     
     # Dimensions
     st.markdown("#### 🔢 Dimensions")
