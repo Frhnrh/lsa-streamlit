@@ -108,53 +108,53 @@ if st.button("Run LSA") and unknown_points and known_points and observations:
 
     # STEP 5: Display Results
     
-st.subheader("📊 Step 5: Results")
-
-# Dimensions
-st.markdown("#### 🔢 Dimensions")
-st.write(f"Number of observations (n): {n}")
-st.write(f"Number of unknowns (u): {u}")
-st.write(f"Redundancy (r): {r}")
-
-# Matrix L
-st.markdown("#### 📥 Matrix L")
-st.text(L)
-
-# Matrix A
-st.markdown("#### 🧱 Matrix A")
-st.text(A)
-
-# Adjusted Parameters
-st.markdown("#### 📐 Adjusted Parameters")
-for i, pt in enumerate(unknown_points):
-    st.write(f"{pt} = {X[i, 0]:.4f} m")
-
-# Residuals
-st.markdown("#### 📉 Residuals (v)")
-residual_str = "\n".join([f"v{i+1} = {v[0]:.5f}" for i, v in enumerate(V)])
-st.text(residual_str)
-
-# Aposteriori Variance
-st.markdown("#### 📈 Aposteriori Variance (σ₀²)")
-st.write(f"σ₀² = {sigma0_squared:.6f}")
-
-# Covariance Matrix
-st.markdown("#### 🧮 Covariance Matrix")
-st.text(Cov)
-
-# Standard Deviations
-st.markdown("#### 📏 Standard Deviations")
-for i, pt in enumerate(unknown_points):
-    st.write(f"σ({pt}) = {std_dev[i]:.6f} m")
-
-# Final Result ± σ
-st.markdown("#### ✅ Final Adjusted Parameters ± Std Dev")
-for i, pt in enumerate(unknown_points):
-    st.write(f"{pt} = {X[i, 0]:.4f} ± {std_dev[i]:.4f} m")
-
-# Nota
-st.markdown("#### 📝 Note")
-st.info("The closer the standard deviation is to 0, the higher the accuracy of the adjusted data.")
+    st.subheader("📊 Step 5: Results")
+    
+    # Dimensions
+    st.markdown("#### 🔢 Dimensions")
+    st.write(f"Number of observations (n): {n}")
+    st.write(f"Number of unknowns (u): {u}")
+    st.write(f"Redundancy (r): {r}")
+    
+    # Matrix L
+    st.markdown("#### 📥 Matrix L")
+    st.text(L)
+    
+    # Matrix A
+    st.markdown("#### 🧱 Matrix A")
+    st.text(A)
+    
+    # Adjusted Parameters
+    st.markdown("#### 📐 Adjusted Parameters")
+    for i, pt in enumerate(unknown_points):
+        st.write(f"{pt} = {X[i, 0]:.4f} m")
+    
+    # Residuals
+    st.markdown("#### 📉 Residuals (v)")
+    residual_str = "\n".join([f"v{i+1} = {v[0]:.5f}" for i, v in enumerate(V)])
+    st.text(residual_str)
+    
+    # Aposteriori Variance
+    st.markdown("#### 📈 Aposteriori Variance (σ₀²)")
+    st.write(f"σ₀² = {sigma0_squared:.6f}")
+    
+    # Covariance Matrix
+    st.markdown("#### 🧮 Covariance Matrix")
+    st.text(Cov)
+    
+    # Standard Deviations
+    st.markdown("#### 📏 Standard Deviations")
+    for i, pt in enumerate(unknown_points):
+        st.write(f"σ({pt}) = {std_dev[i]:.6f} m")
+    
+    # Final Result ± σ
+    st.markdown("#### ✅ Final Adjusted Parameters ± Std Dev")
+    for i, pt in enumerate(unknown_points):
+        st.write(f"{pt} = {X[i, 0]:.4f} ± {std_dev[i]:.4f} m")
+    
+    # Nota
+    st.markdown("#### 📝 Note")
+    st.info("The closer the standard deviation is to 0, the higher the accuracy of the adjusted data.")
 
 
     # STEP 6: Plot Elevation Profile
